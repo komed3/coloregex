@@ -2,6 +2,6 @@ class ColoRegEx {
 
     public static readonly HSL = /^hsla?\s*\(\s*(?<h>(?<h_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<h_unit>°|deg|grad|rad|turn)?)\s*[,|\s+]\s*(?<s>(?<s_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<s_unit>%)?)\s*[,|\s+]\s*(?<l>(?<l_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<l_unit>%)?)\s*[,|\/|\s+]?\s*(?<alpha>(?<alpha_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<alpha_unit>%)?)?\s*\)$/i;
     public static readonly RGB = /^rgba?\s*\(\s*(?<r>(?<r_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<r_unit>%?)?)\s*[,|\s+]\s*(?<g>(?<g_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<g_unit>%?)?)\s*[,|\s+]\s*(?<b>(?<b_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<b_unit>%?)?)\s*[,|\/|\s+]?\s*(?<alpha>(?<alpha_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<alpha_unit>%)?)?\s*\)$/i;
-    public static readonly HEX = /^\#$/i;
+    public static readonly HEX = /^(?:(?<rgb_short>\#(?<r1>[a-f\d])(?<g1>[a-f\d])(?<b1>[a-f\d])(?<alpha1>[a-f\d])?)|(?<rgb>\#(?<r2>[a-f\d]{2})(?<g2>[a-f\d]{2})(?<b2>[a-f\d]{2})(?<alpha2>[a-f\d]{2})?))$/i;
 
 }

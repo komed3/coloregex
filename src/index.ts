@@ -1,6 +1,5 @@
 class ColoRegEx {
 
-    public static readonly RGBA = /rgba?()/i;
-    public static readonly HSLA = /hsla?()/i;
+    public static readonly HSL = /hsla?\s*\(\s*(?<h>(?<h_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<h_unit>°|deg|grad|rad|turn)?)\s*[,|\s+]\s*(?<s>(?<s_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<s_unit>%)?)\s*[,|\s+]\s*(?<l>(?<l_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<l_unit>%)?)\s*[,|\/|\s+]?\s*(?<alpha>(?<alpha_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<alpha_unit>%)?)?\s*\)/i;
 
 }

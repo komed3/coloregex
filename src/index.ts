@@ -12,4 +12,20 @@ export class ColoRegEx {
     public static readonly OKLAB = /^oklab\s*\(\s*(?<l>(?<l_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<l_unit>%)?)\s*[,|\s+]\s*(?<a>(?<a_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?))\s*[,|\s+]\s*(?<b>(?<b_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?))\s*\)$/i;
     public static readonly OKLCH = /^oklch\s*\(\s*(?<l>(?<l_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<l_unit>%)?)\s*[,|\s+]\s*(?<c>(?<c_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?))\s*[,|\s+]\s*(?<h>(?<h_value>[-+]?\d*(?:\.\d+)?(?:e[+-]?\d+)?)(?<h_unit>°|deg|grad|rad|turn)?)\s*\)$/i;
 
+    public static match ( value: string ) : RegExpMatchArray | null {
+        return (
+            value.match( ColoRegEx.HEX ) ||
+            value.match( ColoRegEx.RGB ) ||
+            value.match( ColoRegEx.HSL ) ||
+            value.match( ColoRegEx.HSV ) ||
+            value.match( ColoRegEx.HWB ) ||
+            value.match( ColoRegEx.CMYK ) ||
+            value.match( ColoRegEx.LAB ) ||
+            value.match( ColoRegEx.LCH ) ||
+            value.match( ColoRegEx.XYZ ) ||
+            value.match( ColoRegEx.OKLAB ) ||
+            value.match( ColoRegEx.OKLCH )
+        );
+    }
+
 }

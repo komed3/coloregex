@@ -5,14 +5,9 @@ export class ColorUtils {
     }
 
     static numeric ( value: any ) : number {
-        if ( ! value ) return 0;
-        value = String( value ).trim();
-        if ( value.endsWith( '%' ) ) {
-            const n = parseFloat( value.slice( 0, -1 ) );
-            return isNaN( n ) ? 0 : n / 100;
-        }
-        const n = parseFloat( value );
-        return isNaN( n ) ? 0 : n;
+        if ( ! value || ! ( value = String( value ).trim() ).length ) return 0;
+        if ( value.endsWith( '%' ) ) return Number( value.slice( 0, -1 ) ) / 100;
+        return Number( value );
     }
 
     static angle2Deg ( value: number, unit?: string ) : number {
@@ -25,12 +20,12 @@ export class ColorUtils {
         }
     }
 
-    static hex2Dec ( h: string ) : number {
-        return parseInt( h, 16 );
+    static hex2Dec ( hex: string ) : number {
+        return parseInt( hex, 16 );
     }
 
-    static expandShortHex ( h: string ) : string {
-        return h.split( '' ).map( c => c + c ).join( '' );
+    static expandShortHex ( hex: string ) : string {
+        return hex.split( '' ).map( ch => ch + ch ).join( '' );
     }
 
     static normalize (

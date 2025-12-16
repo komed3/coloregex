@@ -25,4 +25,12 @@ export class ColorUtils {
         }
     }
 
+    static hex2Dec ( h: string ) : number {
+        return parseInt( h, 16 );
+    }
+
+    static expandShortHex ( h: string ) : string {
+        return h.split( '' ).map( c => c + c ).join( '' );
+    }
+
 }

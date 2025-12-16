@@ -33,4 +33,16 @@ export class ColorUtils {
         return h.split( '' ).map( c => c + c ).join( '' );
     }
 
+    static normalize (
+        vals: { [ k: string ]: number | undefined },
+        cfg: { ranges: { [ k: string ]: [ number, number ] } },
+        clmp: boolean = false
+    ) : { [ k: string ]: number | undefined } {
+        return Object.fromEntries( Object.entries( vals ).map( ( [ ch, v ] ) => [
+            ch, v !== undefined ? ( cfg.ranges[ ch ] ? (
+                clmp ? this.clamp( v, ...cfg.ranges[ ch ] ) : v
+            ) : v ) : undefined
+        ] ) );
+    }
+
 }

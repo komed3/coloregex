@@ -10,8 +10,8 @@ export interface ParsedColor extends ColorChannels {
     alpha?: number;
 }
 
-export interface ColorMatch {
-    space: ColorSpace;
+export interface ColorMatch< T extends ColorSpace = ColorSpace > {
+    space: T;
     match: RegExpMatchArray;
     channel: ParsedColor;
 }

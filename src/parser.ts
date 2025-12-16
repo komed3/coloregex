@@ -15,3 +15,5 @@ export class ColorParser {
     public toHEX () {}
 
 }
+
+export const colorParser = new ColorParser();

@@ -15,4 +15,14 @@ export class ColorUtils {
         return isNaN( n ) ? 0 : n;
     }
 
+    static angle2Deg ( value: number, unit?: string ) : number {
+        switch ( unit?.toLowerCase() ) {
+            case 'deg': case '°': return value;
+            case 'grad': return value * 0.9;
+            case 'rad': return value * ( 180 / Math.PI );
+            case 'turn': return value * 360;
+            default: return value;
+        }
+    }
+
 }

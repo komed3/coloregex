@@ -2,15 +2,8 @@ export type ColorSpace =
     | 'hex' | 'rgb' | 'hsl' | 'hsv' | 'hwb' | 'cmyk'
     | 'lab' | 'lch' | 'oklab' | 'oklch' | 'p3';
 
-export interface ColorConfig {
-    channel: { [ key: string ]: {
-        ranges: [ number, number ];
-    } };
-    clamp: boolean;
-}
-
 export interface ColorChannels {
-    [ key: string ]: number | undefined;
+    [ ch: string ]: number | undefined;
 }
 
 export interface ParsedColor extends ColorChannels {

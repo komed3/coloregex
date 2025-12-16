@@ -1,3 +1,5 @@
+import { ColorChannels } from './types';
+
 export class ColorUtils {
 
     static clamp ( value: number, min: number, max: number ) : number {
@@ -29,10 +31,10 @@ export class ColorUtils {
     }
 
     static normalize (
-        vals: { [ k: string ]: number | undefined },
+        vals: ColorChannels,
         cfg: { ranges: { [ k: string ]: [ number, number ] } },
         clmp: boolean = false
-    ) : { [ k: string ]: number | undefined } {
+    ) : ColorChannels {
         return Object.fromEntries( Object.entries( vals ).map( ( [ ch, v ] ) => [
             ch, v !== undefined ? ( cfg.ranges[ ch ] ? (
                 clmp ? this.clamp( v, ...cfg.ranges[ ch ] ) : v
